@@ -8,7 +8,7 @@
   (expt n n))
 
 (def last-digits (d n)
-  "Gets the last d digits of n."
+  "Returns a number which is the last d digits of n."
   (mod n (expt 10 d)))
 
 (def solve ()
