@@ -105,7 +105,7 @@
 
 (def first-digits (d n)
   "Returns a number which is the first d digits of n. There is a 
-   second value which is the rest of the digits."
+   second return value which is the rest of the digits."
   (let length (len (tostring (pr n)))
     (if (<= length d)
 	n
