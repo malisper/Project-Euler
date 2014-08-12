@@ -12,7 +12,7 @@
         0
       (is n 0)
         1
-      'else
+      :else
         (+ (num-ways (- n (car coins)) coins)
 	   (num-ways n (cdr coins)))))
 
