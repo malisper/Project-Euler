@@ -1,6 +1,6 @@
 (in-package :clamp)
 
-(defparameter number* 1000000
+(defparameter greater-than* 1000000
 	"The number the other numbers have to be greater than for this
    problem.")
 
@@ -22,5 +22,5 @@
 	(ret result 0
 		(upto n 0 largest-n*
 			(upto r 0 n
-				(when (> (choose n r) number*)
+				(when (> (choose n r) greater-than*)
 					(++ result))))))
