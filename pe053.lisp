@@ -1,7 +1,10 @@
 (in-package :clamp)
 
+;;;; NOTICE: If you are viewing this on GitHub, there appears to be
+;;;; some sort of indentation problem.
+
 (defparameter greater-than* 1000000
-	"The number the other numbers have to be greater than for this
+  "The number the other numbers have to be greater than for this
    problem.")
 
 (defparameter largest-n* 100
