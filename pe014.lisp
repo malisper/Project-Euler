@@ -17,6 +17,6 @@
 
 (def solve ()
   "Solves PE problem 14."
-  (best (compare #'>
-		 (compose #'len #'collatz-chain))
-	(range 1 largest*)))
+  (best #'>
+        (range 1 largest*)
+	:key (compose #'len #'collatz-chain)))
