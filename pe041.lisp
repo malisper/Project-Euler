@@ -16,11 +16,9 @@
       '(())
       (cart #'cons xs (permutations (rem it xs :count 1)))))
 
-(def pandigital (x)
-  "Is this a pandigital number (does it use all of the digits from 1
-   to some number k exactly once)?"
-  (let ds (digits x)
-    (iso (nsort #'< ds) (range 1 (len ds)))))
+(def pandigitals (d)
+  "Returns a list of all of the pandigital numbers with d digits."
+  (map #'list->number (permutations (range 1 d))))
 
 (def list->number (xs)
   "Takes a list of digits and returns the number they represent."
@@ -31,7 +29,7 @@
 
 (def solve ()
   "Solves PE problem 41."
-  (downfrom n 9 1 ; the largest pandigital only has 9 digits
-    (each pan (nsort #'> (map #'list->number (permutations (range 1 n))))
+  (downfrom n 9 1 ; the largest pandigital has 9 digits
+    (each pan (sort #'> (pandigitals n))
       (when (primep pan)
         (return-from solve pan)))))
