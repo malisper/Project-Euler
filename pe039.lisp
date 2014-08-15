@@ -22,4 +22,4 @@
 
 (def solve ()
   "Solves PE problem 39."
-  (best #'> (range 1 1000) :key #'num-solutions))
+  (best #'> (range 1 1000) #'num-solutions))
