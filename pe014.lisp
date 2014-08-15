@@ -19,4 +19,4 @@
   "Solves PE problem 14."
   (best #'>
         (range 1 largest*)
-	:key (compose #'len #'collatz-chain)))
+	(compose #'len #'collatz-chain)))
