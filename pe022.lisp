@@ -11,12 +11,12 @@
                 (complement #'alpha-char-p))))
 
 (def charval (c)
-  "Returns the alphabetical value of a char (A=1, B=2, .., Z=26)."
+  "Returns the alphabetical value of this char (A=1, B=2, .., Z=26)."
   (- (char-code c) #.(- (char-code #\A) 1)))
 
 (def alphaval (name)
-  "Returns the alphaval of this name. The name score is the sum of
-   the alphavals of the characters in the name."
+  "Returns the alphaval of this name. The alphaval is the sum of the
+   charvals of the individual chars in the name."
   (reduce #'+ name :key #'charval))
 
 (def solve ()
@@ -24,5 +24,3 @@
   (loop for name in (parse-file)
         for i from 1
         sum (* i (alphaval name))))
-
-
