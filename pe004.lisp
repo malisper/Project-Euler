@@ -1,6 +1,6 @@
 (in-package :clamp)
 
-(defparameter lowest* 100 "The lower bound on the problem.")
+(defparameter lowest*  100  "The lower bound on the problem.")
 (defparameter largest* 1000 "The upper bound on the problem.")
 
 (def palindrome (n)
