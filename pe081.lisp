@@ -4,7 +4,7 @@
   "The file containing the matrix.")
 
 (def parse-matrix ()
-  "Parses the matrix in file*. Returns a list of lists."
+  "Parses the matrix in file*. Returns a vector of vectors."
   (coerce (map #'parse-line (tokens (filechars file*) #\newline))
           'vector))
 
