@@ -21,17 +21,15 @@
 (defmemo shortest (r c)
   "Returns the shortest distance of the matrix starting at the given
    row and column."
-  (if (and (is r (- num-rows* 1))
-           (is c (- num-cols* 1)))
-        (aref (aref matrix* r) c)
-      (is r (- num-rows* 1))
-        (+ (aref (aref matrix* r) c)
-           (shortest r (+ c 1)))
-      (is c (- num-cols* 1))
-        (+ (aref (aref matrix* r) c)
-           (shortest (+ r 1) c))
-      :else
-        (+ (aref (aref matrix* r) c)
+  (+ (aref (aref matrix* r) c)
+     (if (and (is r (- num-rows* 1))
+              (is c (- num-cols* 1)))
+           0
+         (is r (- num-rows* 1))
+           (shortest r (+ c 1))
+         (is c (- num-cols* 1))
+           (shortest (+ r 1) c)
+         :else
            (min (shortest (+ r 1) c)
                 (shortest r (+ c 1))))))
 
