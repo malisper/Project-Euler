@@ -12,9 +12,11 @@
    that row."
   (cl:map 'vector #'parse-integer (tokens line #\,)))
 
-(defparameter matrix* (parse-matrix))
-(defparameter num-rows* 80)
-(defparameter num-cols* 80)
+(defparameter matrix* (parse-matrix)
+  "A parsed version of the matrix.")
+
+(defparameter num-rows* 80 "The number of rows in the matrix.")
+(defparameter num-cols* 80 "The number of cols in the matrix.")
 
 (defmemo shortest (r c)
   "Returns the shortest distance of the matrix starting at the given
