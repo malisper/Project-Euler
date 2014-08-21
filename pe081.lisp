@@ -9,7 +9,7 @@
           'vector))
 
 (def parse-line (line)
-  "Parses a row of the matrix and returns a list of every number in
+  "Parses a row of the matrix and returns a vector of every number in
    that row."
   (coerce (map #'parse-integer (tokens line #\,))
           'vector))
