@@ -5,14 +5,12 @@
 
 (def parse-matrix ()
   "Parses the matrix in file*. Returns a vector of vectors."
-  (coerce (map #'parse-line (tokens (filechars file*) #\newline))
-          'vector))
+  (cl:map 'vector #'parse-line (tokens (filechars file*) #\newline)))
 
 (def parse-line (line)
   "Parses a row of the matrix and returns a vector of every number in
    that row."
-  (coerce (map #'parse-integer (tokens line #\,))
-          'vector))
+  (cl:map 'vector #'parse-integer (tokens line #\,)))
 
 (defparameter matrix* (parse-matrix))
 (defparameter num-rows* 80)
