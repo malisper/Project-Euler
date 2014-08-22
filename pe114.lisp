@@ -1,7 +1,10 @@
 (in-package :clamp)
 
-(defparameter row-size* 50)
-(defparameter min-block* 3)
+(defparameter row-size* 50
+  "The size of the row for this problem.")
+
+(defparameter min-block* 3
+  "The minimum size of a block for this problem.")
 
 (defmemo num-ways (n)
   "The number of ways to tile a row of ROW-SIZE* using blocks of
