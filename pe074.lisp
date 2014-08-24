@@ -20,17 +20,17 @@
 
 (def valid (n)
   "Does this number have a chain of the proper length?"
-  (with (current   n
-         num-times 0 ; This is needed in case of early breaking.
-         seen      (table)) 
-    (loop repeat chain-length*
-          while (no (gethash current seen))
-          do
+  (loop with current   = n 
+        with num-times = 0 ; This is needed in case of early breaking.
+        with seen      = (table)
+       
+        repeat chain-length*
+        while (no (gethash current seen)) do
           (= (gethash current seen) t)
           (zap #'sum-fact-of-digits current)
           (++ num-times)
-          finally (return (and (is num-times chain-length*)
-                               (gethash current seen))))))
+        finally (return (and (is num-times chain-length*)
+                             (gethash current seen)))))
 
 (def solve ()
   "Solves PE problem 74."
