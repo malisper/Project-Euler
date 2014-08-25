@@ -42,7 +42,7 @@
 (defparameter primes* (make-pipe 2 (keep-pipe #'primep (integers 3)))
   "A pipe of all of the prime numbers.")
 
-(defmemo primep (n)
+(def primep (n)
   "Is this number prime?"
   (and (> n 1)
        (rec (ps primes*)
