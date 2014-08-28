@@ -8,20 +8,20 @@
   (loop for i from 1
      ;; The condition is true if the largest sum of digit powers
      ;; does not have enough digits. Since this is true when we
-     ;; are too far, one needs to be subtracted from that number
+     ;; are too far, one needs to be subtracted from that number.
      if (< (* i (expt 9 power*))
            (expt 10 (- i 1)))
        return (- i 1)))
 
 (def sum-of-digits-power (n p)
-  "Returns the sum of the digits of n raised to the p power."
+  "Returns the sum of the digits of N raised to the P power."
   (if (is n 0)
       0
       (+ (expt (mod n 10) p)
          (sum-of-digits-power (floor n 10) p))))
 
 (def valid (n p)
-  "Is n the sum of its digits raised to the p power?"
+  "Is N the sum of its digits raised to the P power?"
   (is n (sum-of-digits-power n p)))
 
 (def solve ()
