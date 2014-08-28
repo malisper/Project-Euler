@@ -4,11 +4,11 @@
   "The upper bound on the problem.")
 
 (def self-power (n)
-  "Raise n to the nth power."
+  "Raise N to the Nth power."
   (expt n n))
 
 (def last-digits (d n)
-  "Returns a number which is the last d digits of n."
+  "Returns a number which is the last D digits of N."
   (mod n (expt 10 d)))
 
 (def solve ()
