@@ -8,7 +8,7 @@
   (len (tostring (pr n))))
 
 (def nth-digit (n d)
-  "Gets the dth digit of the number n (from the left, zero indexed)."
+  "Gets the Dth digit of the number N (from the left, zero indexed)."
   (ado (tostring (pr n))
        (char it d)
        (char->digit it)))
@@ -18,8 +18,8 @@
   (- (char-code c) #.(char-code #\0)))
 
 (def get-places (places)
-  "Gets all of the places specified by 'places' of Champernowne's
-   constant. 'places' needs to be a list from smallest to largest."
+  "Gets all of the places specified by PLACES of Champernowne's
+   constant. PLACES needs to be a list from smallest to largest."
   (ret result 1
     (loop while places
           for i from 1
