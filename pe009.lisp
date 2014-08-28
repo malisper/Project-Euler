@@ -8,7 +8,7 @@
   (* n n))
 
 (def triple (a b c)
-  "Are a, b, and c a pythagorean triple?"
+  "Are A, B, and C a pythagorean triple?"
   (is (+ (sqr a) (sqr b))
       (sqr c)))
 
