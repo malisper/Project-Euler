@@ -16,8 +16,8 @@
 
 (def run (start distinct length &optional (current 0))
   "Starting at start, find the first number of the first run of 
-   consecutive numbers of length 'length'. All the numbers in which
-   have 'distinct' distinct prime factors."
+   consecutive numbers of length LENGTH. All the numbers in which
+   have DISTINCT distinct prime factors."
   (if (is length current)
         (- start current)
       (distinct-prime-factors start distinct)
