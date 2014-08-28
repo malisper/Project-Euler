@@ -4,20 +4,20 @@
 (use-package :cl-primality)
 
 (def digits (n)
-  "Returns a list of the digits of n."
+  "Returns a list of the digits of N."
   (ret result '()
     (while (> n 0)
       (push (mod n 10) result)
       (zap #'floor n 10))))
 
 (def permutations (xs)
-  "Returns a list of all of the permutations of xs."
+  "Returns a list of all of the permutations of XS."
   (if (null xs)
       '(())
       (cart #'cons xs (permutations (rem it xs :count 1)))))
 
 (def pandigitals (d)
-  "Returns a list of all of the pandigital numbers with d digits."
+  "Returns a list of all of the pandigital numbers with D digits."
   (map #'list->number (permutations (range 1 d))))
 
 (def list->number (xs)
