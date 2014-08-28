@@ -1,11 +1,11 @@
 (in-package :clamp)
 
 (def sqr (x)
-  "Returns the square of x."
+  "Returns the square of its argument."
   (* x x))
 
 (def triple (a b c)
-  "Are a, b, and c a pythagorean triple?"
+  "Are A, B, and C a pythagorean triple?"
   (and (< a b c)
        (is (+ (sqr a) (sqr b))
            (sqr c))))
