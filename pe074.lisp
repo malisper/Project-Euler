@@ -7,13 +7,13 @@
   "The length of the chain needed.")
 
 (def fact (n)
-  "Returns the factorial of n."
+  "Returns the factorial of N."
   (if (is n 0)
       1
       (* n (fact (- n 1)))))
 
 (def sum-fact-of-digits (n)
-  "Returns the sum of the factorial of the digits of n."
+  "Returns the sum of the factorial of the digits of N."
   (if (is n 0)
       0
       (+ (fact (mod n 10)) (sum-fact-of-digits (floor n 10)))))
