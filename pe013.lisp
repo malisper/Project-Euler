@@ -104,7 +104,7 @@
   "A list of numbers needed for the problem.")
 
 (def first-digits (d n)
-  "Returns a number which is the first d digits of n. There is a 
+  "Returns a number which is the first D digits of N. There is a 
    second return value which is the rest of the digits."
   (let length (len (tostring (pr n)))
     (if (<= length d)
