@@ -8,7 +8,7 @@
 
 (def prime-factors (n)
   "Returns an alist of every prime factor and the number of times it
-   it occurs in n."
+   it occurs in N."
   (ado (factor n)
        (counts it)
        (tablist it)))
@@ -34,8 +34,8 @@
   (reduce #'+ (proper-factors n)))
 
 (def amicable (n)
-  "Is this number part of an amicable pair [does d(d(n)) = n and
-   d(n) \= n]"
+  "Is this number part of an amicable pair [does d(d(N)) = N and
+   d(N) \= N]?"
   (let val (d n)
     (and (no (is n val))
          (is n (d val)))))
