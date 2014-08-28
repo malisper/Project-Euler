@@ -9,8 +9,7 @@
 (defparameter upper-b*  999 "The upper bound on b.")
 
 (def quad-val (a b n)
-  "Returns the value of the quadratic [n^2 + an + b] using
-   the values passed in."
+  "Returns the value of the quadratic [N^2 + AN + B]."
   (+ (* n n) (* a n) b))
 
 (def num-prime (a b)
