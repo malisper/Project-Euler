@@ -4,7 +4,7 @@
   "The position we need for this problem.")
 
 (def permutations (xs)
-  "Returns a list of all of the permutations of xs."
+  "Returns a list of all of the permutations of XS."
   (if (null xs)
       '(())
       (cart #'cons xs (permutations (rem it xs :count 1)))))
