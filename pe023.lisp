@@ -8,7 +8,7 @@
 
 (def prime-factors (n)
   "Returns an alist of every prime factor and the number of times it
-   it occurs in n."
+   it occurs in N."
   (ado (factor n)
        (counts it)
        (tablist it)))
