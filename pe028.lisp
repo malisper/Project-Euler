@@ -8,7 +8,7 @@
   (* x x))
 
 (def sigma (x y)
-  "Given of a spiral (x units right, y units up from the center),
+  "Given of a spiral (X units right, Y units up from the center),
    returns the number found at the location. This spiral is a little
    different from the one in the problem in that it goes up initially
    and goes counter clockwise."
