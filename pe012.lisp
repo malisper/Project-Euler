@@ -18,7 +18,7 @@
   (>= (num-factors n) factors*))
 
 (def triangle (n)
-  "Returns the nth triangle number [(triangle 1) = 1]."
+  "Returns the Nth triangle number [(triangle 1) = 1]."
   (* (+ n 1) n 1/2))
 
 (def solve ()
