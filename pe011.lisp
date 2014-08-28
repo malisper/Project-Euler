@@ -63,7 +63,7 @@
                        (nth (- r-start diff) grid))))))))))
 
 (def group-by-n (n xs)
-  "Groups every n adjacent elements in xs."
+  "Groups every N adjacent elements in XS."
   (let next (firstn n xs)
     (if (len< next n)
         '()
