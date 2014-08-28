@@ -8,7 +8,7 @@
   (len (tostring (pr n))))
 
 (def answer (n)
-  "Is this the answer?"
+  "Is this number large enough to be the answer?"
   (>= (num-digits n) digts-needed*))
 
 (def solve ()
