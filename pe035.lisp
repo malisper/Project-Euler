@@ -22,7 +22,7 @@
   "A table containing all of the primes needed for this problem.")
 
 (def digits (n)
-  "Returns a list of the digits of n."
+  "Returns a list of the digits of N."
   (ret result '()
     (while (> n 0)
       (push (mod n 10) result)
