@@ -3,7 +3,7 @@
 (defparameter file* "~/keylog.txt")
 
 (def digits (n)
-  "Returns a list of the digits of n."
+  "Returns a list of the digits of N."
   (ret result '()
     (while (> n 0)
       (push (mod n 10) result)
