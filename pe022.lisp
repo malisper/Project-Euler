@@ -8,7 +8,7 @@
    in alphabetical order."
   (sort #'string<
         (tokens (filechars file*)
-                (complement #'alpha-char-p))))
+                (notf #'alpha-char-p))))
 
 (def charval (c)
   "Returns the alphabetical value of this char (A=1, B=2, .., Z=26)."
