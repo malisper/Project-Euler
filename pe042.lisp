@@ -11,7 +11,7 @@
 (def parse-file ()
   "Returns a list of the names contained in the file."
   (tokens (filechars file*)
-          (complement #'alpha-char-p)))
+          (notf #'alpha-char-p)))
 
 (def charval (c)
   "Returns the value of a char (the position it is in the alphabet)."
