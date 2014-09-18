@@ -1,4 +1,4 @@
-(in-package :clamp)
+(in-package :experimental)
 
 (defparameter file* "~/words.txt"
   "The file needed for this problem.")
@@ -11,7 +11,7 @@
 (def parse-file ()
   "Returns a list of the names contained in the file."
   (tokens (filechars file*)
-          (notf #'alpha-char-p)))
+          ~alpha-char-p))
 
 (def charval (c)
   "Returns the value of a char (the position it is in the alphabet)."
@@ -30,5 +30,4 @@
 
 (def solve ()
   "Solves PE problem 42."
-  (count (compose #'triangle #'wordval)
-         (parse-file)))
+  (count triangle+wordval (parse-file)))

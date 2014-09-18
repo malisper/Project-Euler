@@ -1,4 +1,4 @@
-(in-package :clamp)
+(in-package :experimental)
 
 (defparameter file* "~/names.txt"
   "The file containing the names for this problem.")
@@ -8,11 +8,11 @@
    in alphabetical order."
   (sort #'string<
         (tokens (filechars file*)
-                (notf #'alpha-char-p))))
+                ~alpha-char-p)))
 
 (def charval (c)
   "Returns the alphabetical value of this char (A=1, B=2, .., Z=26)."
-  (- (char-code c) #.(- (char-code #\A) 1)))
+  (- (char-code c) (- (char-code #\A) 1)))
 
 (def alphaval (name)
   "Returns the alphaval of this name. The alphaval is the sum of the
