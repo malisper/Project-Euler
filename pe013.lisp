@@ -1,4 +1,4 @@
-(in-package :clamp)
+(in-package :clamp-experimental)
 
 (defparameter numbers* '(
 37107287533902102798797998220837590246510135740250
@@ -106,7 +106,7 @@
 (def first-digits (d n)
   "Returns a number which is the first D digits of N. There is a 
    second return value which is the rest of the digits."
-  (let length (len (tostring (pr n)))
+  (let length (len+tostring+pr n)
     (if (<= length d)
 	n
 	(floor n (expt 10 (- length d))))))
