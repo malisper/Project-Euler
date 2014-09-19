@@ -1,4 +1,4 @@
-(in-package :clamp)
+(in-package :experimental)
 
 (defparameter num-truncable* 11
   "The number of truncable primes.")
@@ -47,7 +47,7 @@
   (and (> n 1)
        (rec (ps primes*)
          (or (< n (sqr (head ps)))
-             (and (not (multiple n (head ps)))
+             (and (~multiple n (head ps))
                   (recur (tail ps)))))))
 
 (def cut-left (n)
