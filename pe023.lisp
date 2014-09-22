@@ -1,4 +1,4 @@
-(in-package :clamp)
+(in-package :experimental)
 
 ;; https://github.com/smithzvk/cl-factoring
 (use-package :cl-factoring)
@@ -44,7 +44,7 @@
   (keys
     (ret tab (table)
       (upto i 1 largest*
-        (= (gethash i tab) t))
+        (= tab.i t))
       (let abundents (abundents largest*)
         (each a abundents
           (each b abundents

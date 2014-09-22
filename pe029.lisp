@@ -1,4 +1,4 @@
-(in-package :clamp)
+(in-package :clamp-experimental)
 
 (defparameter lower-a* 2   "The lower bound on a.")
 (defparameter lower-b* 2   "The lower bound on b.")
@@ -12,6 +12,6 @@
       (upto a lower-a* upper-a*
 	(upto b lower-b* upper-b*
 	  (let power (expt a b)
-	    (unless (gethash power seen)
-	      (= (gethash power seen) t)
+            (unless seen.power
+	      (= seen.power t)
 	      (++ result))))))))

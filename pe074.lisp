@@ -1,4 +1,4 @@
-(in-package :clamp)
+(in-package :experimental)
 
 (defparameter largest* 1000000
   "The upper bound on the problem.")
@@ -10,13 +10,13 @@
   "Returns the factorial of N."
   (if (is n 0)
       1
-      (* n (fact (- n 1)))))
+      (* n (fact+dec n))))
 
 (def sum-fact-of-digits (n)
   "Returns the sum of the factorial of the digits of N."
   (if (is n 0)
       0
-      (+ (fact (mod n 10)) (sum-fact-of-digits (floor n 10)))))
+      (+ (fact+mod n 10) (sum-fact-of-digits+floor n 10))))
 
 (def valid (n)
   "Does this number have a chain of the proper length?"
@@ -25,12 +25,12 @@
         with seen      = (table)
        
         repeat chain-length*
-        while (no (gethash current seen)) do
-          (= (gethash current seen) t)
+        until seen.current do
+          (= seen.current t)
           (zap #'sum-fact-of-digits current)
           (++ num-times)
         finally (return (and (is num-times chain-length*)
-                             (gethash current seen)))))
+                             seen.current))))
 
 (def solve ()
   "Solves PE problem 74."
