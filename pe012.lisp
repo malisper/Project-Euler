@@ -19,7 +19,7 @@
 
 (def triangle (n)
   "Returns the Nth triangle number [(triangle 1) = 1]."
-  (* (+ n 1) n 1/2))
+  (* (inc n) n 1/2))
 
 (def solve ()
   "Solves PE problem 12."

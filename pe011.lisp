@@ -1,4 +1,4 @@
-(in-package :clamp)
+(in-package :experimental)
 
 (defparameter num-numbers* 4
   "The number of adjacent numbers needed for the problem.")
@@ -44,8 +44,8 @@
   "Given a grid, returns all of the possible diagonals that go from 
    the top left to the bottom right."
   (accum a
-    (up r-start (- num-numbers* 1) (len grid)
-      (up c-start (- num-numbers* 1) (len (car grid))
+    (up r-start (dec num-numbers*) (len grid)
+      (up c-start (dec num-numbers* dec) (len+car grid)
         (a (accum b
              (up diff 0 num-numbers*
                (b (nth (- c-start diff)
@@ -55,8 +55,8 @@
   "Given a grid, returns all of the possible diagonals that go from
    the bottom left to the top right."
   (accum a
-    (up r-start (- num-numbers* 1) (len grid)
-      (up c-start 0 (- (len (car grid)) num-numbers* -1)
+    (up r-start (dec num-numbers*) (len grid)
+      (up c-start 0 (- (len+car grid) num-numbers* -1)
         (a (accum b
              (up diff 0 num-numbers*
                (b (nth (+ c-start diff)

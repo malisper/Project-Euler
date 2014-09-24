@@ -15,7 +15,7 @@
 (def solve ()
   "Solve PE problem 9."
   (upto a 1 total*
-    (upto b (+ a 1) total*
+    (upto b (inc a) total*
       (let c (- total* a b)
 	(when (triple a b c)
 	  (return-from solve (* a b c)))))))
