@@ -1,4 +1,4 @@
-(in-package :clamp)
+(in-package :experimental)
 
 ;; https://github.com/smithzvk/cl-factoring
 (use-package :cl-factoring)
@@ -11,7 +11,7 @@
 
 (def distinct-prime-factors (n k)
   "Does n have k distinct prime factors?"
-  (is (len (dedup (factor n)))
+  (is (len+dedup+factor n)
       k))
 
 (def run (start distinct length &optional (current 0))
