@@ -1,4 +1,4 @@
-(in-package :clamp)
+(in-package :experimental)
 
 ;; https://github.com/smithzvk/cl-primality
 (use-package :cl-primality)
@@ -43,7 +43,7 @@
       (let ds (digits n)
         (up i 0 (len ds)
           (mvb (front back) (split ds i)
-            (a (list->number (append back front)))))))))
+            (a (list->number+append back front))))))))
 
 (def circular-prime (n)
   "Is this number a circular prime (are all of the digit rotations of
