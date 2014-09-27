@@ -9,9 +9,7 @@
 (def prime-factors (n)
   "Returns an alist of every prime factor and the number of times it
    it occurs in N."
-  (ado (factor n)
-       (counts it)
-       (tablist it)))
+  (tablist+counts+factor n))
 
 (def prime-factors->all-factors (ps)
   "Given an alist of the prime-factors of a number and how often the 
@@ -20,7 +18,7 @@
       '(1)
       (cart #'*
             (map [expt (caar ps) _] (range 0 (cadar ps)))
-            (prime-factors->all-factors (cdr ps)))))
+            (prime-factors->all-factors+cdr ps))))
 
 (def proper-factors (n)
   "Returns all of the proper factors of a number."
@@ -41,14 +39,13 @@
 (def non-abundent-sums ()
   "Returns a list of all of the numbers which can not be represented
    as the sum of two abundent numbers."
-  (keys
-    (ret tab (table)
-      (upto i 1 largest*
-        (= tab.i t))
-      (let abundents (abundents largest*)
-        (each a abundents
-          (each b abundents
-            (remhash (+ a b) tab)))))))
+  (keys+ret tab (table)
+    (upto i 1 largest*
+      (= tab.i t))
+    (let abundents (abundents largest*)
+         (each a abundents
+           (each b abundents
+             (remhash (+ a b) tab))))))
 
 (def solve ()
   "Solves PE problem 23."
