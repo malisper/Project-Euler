@@ -27,7 +27,7 @@
 
 (def integers (n)
   "Returns a pipe of the integers starting from n."
-  (make-pipe n (integers (+ n 1))))
+  (make-pipe n (integers+inc n)))
 
 (def keep-pipe (f pipe)
   "Keeps all of the elements of the pipe PIPE that satisify F."
@@ -46,19 +46,19 @@
   "Is this number prime?"
   (and (> n 1)
        (rec (ps primes*)
-         (or (< n (sqr (head ps)))
+         (or (< n (sqr+head ps))
              (and (~multiple n (head ps))
-                  (recur (tail ps)))))))
+                  (recur+tail ps))))))
 
 (def cut-left (n)
   "Cuts off the left most digit of its argument."
-  (mod n (expt 10 (floor (log n 10)))))
+  (mod n (expt 10 (floor+log n 10))))
 
 (def left-to-right-truncable (n)
   "Is this number left to right truncable?"
   (or (is n 0)
       (and (primep n)
-           (left-to-right-truncable (cut-left n )))))
+           (left-to-right-truncable+cut-left n))))
 
 (def cut-right (n)
   "Cuts off the right most digit of its argument."
@@ -79,11 +79,11 @@
   "Returns a list of the first N elements of PIPE."
   (if (is n 1)
       (list (head pipe))
-      (cons (head pipe) (firstn-pipe (- n 1) (tail pipe)))))
+      (cons (head pipe) (firstn-pipe (dec n) (tail pipe)))))
 
 (def solve ()
   "Solves PE problem 37."
   (reduce #'+
     (firstn-pipe num-truncable*
       (keep-pipe #'truncable-prime
-         (tail (tail (tail (tail primes*))))))))
+        (tail+tail+tail+tail primes*)))))
