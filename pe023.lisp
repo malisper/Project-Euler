@@ -43,9 +43,9 @@
     (upto i 1 largest*
       (= tab.i t))
     (let abundents (abundents largest*)
-         (each a abundents
-           (each b abundents
-             (remhash (+ a b) tab))))))
+      (each a abundents
+        (each b abundents
+          (remhash (+ a b) tab))))))
 
 (def solve ()
   "Solves PE problem 23."
