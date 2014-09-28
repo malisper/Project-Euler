@@ -21,7 +21,7 @@
 
 (def tail (pipe)
   "Returns the tail of a pipe."
-  (if (functionp (cdr pipe))
+  (if (functionp+cdr pipe)
       (zap #'funcall (cdr pipe))
       (cdr pipe)))
 
@@ -68,17 +68,16 @@
   "Is this number right to left truncable?"
   (or (is n 0)
       (and (primep n)
-           (right-to-left-truncable (cut-right n)))))
+           (right-to-left-truncable+cut-right n))))
 
 (def truncable-prime (n)
   "Is this number a truncable prime?"
-  (and (right-to-left-truncable n)
-       (left-to-right-truncable n)))
+  (left-to-right-truncable&right-to-left-truncable n))
 
 (def firstn-pipe (n pipe)
   "Returns a list of the first N elements of PIPE."
   (if (is n 1)
-      (list (head pipe))
+      (list+head pipe)
       (cons (head pipe) (firstn-pipe (dec n) (tail pipe)))))
 
 (def solve ()
